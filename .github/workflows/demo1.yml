@@ -26,8 +26,8 @@ jobs:
       - name: Deploy project
         run: echo "Deploying..."
   newJob:
-    runs-on: ubuntu-latest
     needs: build
+    runs-on: ubuntu-latest
     steps:
-       - name: Print jobs
+      - name: Print jobs
         run: echo "{{ needs.build.outputs.script-file }}"
