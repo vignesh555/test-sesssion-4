@@ -10,8 +10,6 @@ jobs:
     outputs:
       script-file: ${{ steps.publish.outputs.output-variable }}
     steps:
-      - name: Output event data
-        run: echo "${{ toJSON(github.event) }}"
       - name: Get code
         uses: actions/checkout@v3
       - name: Install dependencies
@@ -26,7 +24,7 @@ jobs:
       - name: Deploy project
         run: echo "Deploying..."
   newJob:
-    needs: build
+    needs: deploy
     runs-on: ubuntu-latest
     steps:
       - name: Print jobs
