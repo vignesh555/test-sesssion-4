@@ -28,4 +28,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print jobs
-        run: echo "{{ needs.deploy.outputs.script-file }}"
+        run: echo "${{ needs.deploy.outputs.script-file }}"
